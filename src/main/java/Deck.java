@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Deck {
 
@@ -27,5 +28,20 @@ public class Deck {
             }
         }
 
+    }
+
+    public Card dealCard() {
+        Card card = this.getRandomCard();
+        this.cards.remove(card);
+        return card;
+    }
+
+    private Card getRandomCard() {
+        Random random = new Random();
+        int index = random.nextInt(52);
+
+        Card card = this.cards.get(index);
+        System.out.println(card.getValue() + " of " + card.getSuit());
+        return card;
     }
 }

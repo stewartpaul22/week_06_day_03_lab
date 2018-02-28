@@ -23,14 +23,19 @@ public class DeckTest {
     public void canAddCard() {
         deck.addCard(card);
         assertEquals(1, deck.getCardCount());
-//        System.out.println(card.getSuit());
-//        System.out.println(card.getValue());
     }
 
     @Test
     public void canPopulateDeck() {
         deck.populate();
         assertEquals(52, deck.getCardCount());
+    }
+
+    @Test
+    public void canDealCard() {
+        deck.populate();
+        deck.dealCard();
+        assertEquals(51, deck.getCardCount());
     }
 
 }
