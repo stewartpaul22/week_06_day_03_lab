@@ -11,4 +11,8 @@ public class Card {
     public SuitType getSuit() {
         return this.suit;
     }
+
+    public int getValueFromEnum() {
+        return this.value.getValue();
+    }
 }
