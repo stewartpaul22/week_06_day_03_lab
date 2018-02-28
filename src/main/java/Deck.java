@@ -24,7 +24,6 @@ public class Deck {
             for(ValueType faceValue : ValueType.values()) {
                 Card card = new Card(suit, faceValue);
                 this.cards.add(card);
-//                System.out.println(card.getValue() + " of " + card.getSuit());
             }
         }
 
@@ -41,7 +40,6 @@ public class Deck {
         int index = random.nextInt(52);
 
         Card card = this.cards.get(index);
-        System.out.println(card.getValue() + " of " + card.getSuit());
         return card;
     }
 }

@@ -38,4 +38,14 @@ public class DeckTest {
         assertEquals(51, deck.getCardCount());
     }
 
+    @Test
+    public void canDealAllCards() {
+        deck.populate();
+        int deckCount = deck.getCardCount();
+        for(int i = 1; i < deckCount; i++){
+            deck.dealCard();
+        }
+        assertEquals(0, deck.getCardCount());
+    }
+
 }
