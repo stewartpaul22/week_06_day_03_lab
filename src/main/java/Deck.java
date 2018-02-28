@@ -16,4 +16,16 @@ public class Deck {
         this.cards.add(card);
         return card;
     }
+
+
+    public void populate() {
+        for(SuitType suit : SuitType.values()) {
+            for(ValueType faceValue : ValueType.values()) {
+                Card card = new Card(suit, faceValue);
+                this.cards.add(card);
+//                System.out.println(card.getValue() + " of " + card.getSuit());
+            }
+        }
+
+    }
 }

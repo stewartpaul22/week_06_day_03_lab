@@ -19,6 +19,11 @@ public class CardTest {
     }
 
     @Test
+    public void canGetValue() {
+        assertEquals(ValueType.QUEEN, card.getValue());
+    }
+
+    @Test
     public void queenHasValue10() {
         assertEquals(10, card.getValueFromEnum());
     }

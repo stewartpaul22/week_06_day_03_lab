@@ -12,6 +12,10 @@ public class Card {
         return this.suit;
     }
 
+    public ValueType getValue() {
+        return this.value;
+    }
+
     public int getValueFromEnum() {
         return this.value.getValue();
     }
