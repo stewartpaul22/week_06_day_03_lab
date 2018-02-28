@@ -42,7 +42,7 @@ public class DeckTest {
     public void canDealAllCards() {
         deck.populate();
         int deckCount = deck.getCardCount();
-        for(int i = 1; i < deckCount; i++){
+        for(int i = 0; i < deckCount; i++){
             deck.dealCard();
         }
         assertEquals(0, deck.getCardCount());

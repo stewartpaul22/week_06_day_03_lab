@@ -18,7 +18,6 @@ public class Deck {
         return card;
     }
 
-
     public void populate() {
         for(SuitType suit : SuitType.values()) {
             for(ValueType faceValue : ValueType.values()) {
@@ -36,8 +35,9 @@ public class Deck {
     }
 
     private Card getRandomCard() {
+        int remainingCardCount = this.getCardCount();
         Random random = new Random();
-        int index = random.nextInt(52);
+        int index = random.nextInt(remainingCardCount);
 
         Card card = this.cards.get(index);
         return card;
