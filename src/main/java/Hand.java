@@ -8,6 +8,7 @@ public class Hand {
         this.cards =  new ArrayList<>();
     }
 
-
-
+    public int getCardCount() {
+        return this.cards.size();
+    }
 }
