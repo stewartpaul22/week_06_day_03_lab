@@ -29,4 +29,8 @@ public class Hand {
         }
         return total;
     }
+
+    public void addTestCard(Card card) {
+        this.cards.add(card);
+    }
 }

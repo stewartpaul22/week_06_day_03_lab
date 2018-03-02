@@ -12,6 +12,7 @@ public class PlayerTest {
     public void before() {
         player1 = new Player("Kelly");
         deck = new Deck();
+        deck.populate();
     }
 
     @Test
@@ -20,10 +21,15 @@ public class PlayerTest {
     }
 
     @Test
-    public void playerHasHand () {
-        deck.populate();
+    public void getPlayerCardCount() {
         player1.getHand().addCard(deck);
-        assertEquals(1, player1.getHand().getCardCount());
+        assertEquals(1, player1.getCardCount());
+    }
+
+    @Test
+    public void playerHasHand () {
+        player1.getHand().addCard(deck);
+        assertEquals(1, player1.getCardCount());
     }
 
 }

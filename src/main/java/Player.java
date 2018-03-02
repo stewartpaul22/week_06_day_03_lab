@@ -15,4 +15,8 @@ public class Player {
     public Hand getHand() {
         return this.hand;
     }
+
+    public int getCardCount() {
+        return this.hand.getCardCount();
+    }
 }
