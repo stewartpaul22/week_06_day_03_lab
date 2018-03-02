@@ -32,6 +32,12 @@ public class DeckTest {
     }
 
     @Test
+    public void canGetDeckTotalValue() {
+        deck.populate();
+        assertEquals(340, deck.getTotalDeckValue());
+    }
+
+    @Test
     public void canDealCard() {
         deck.populate();
         deck.dealCard();

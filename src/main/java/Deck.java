@@ -13,6 +13,11 @@ public class Deck {
         return this.cards.size();
     }
 
+    public ArrayList<Card> getCards() {
+        ArrayList<Card> cards = this.cards;
+        return cards;
+    }
+
     public Card addCard(Card card) {
         this.cards.add(card);
         return card;
@@ -25,21 +30,31 @@ public class Deck {
                 this.cards.add(card);
             }
         }
-
     }
 
     public Card dealCard() {
         Card card = this.getRandomCard();
-        this.cards.remove(card);
-        return card;
+        int index = cards.indexOf(card);
+        return this.cards.remove(index);
     }
 
     private Card getRandomCard() {
+        Card card = null;
         int remainingCardCount = this.getCardCount();
-        Random random = new Random();
-        int index = random.nextInt(remainingCardCount);
+        if (remainingCardCount > 0) {
+            Random random = new Random();
+            int index = random.nextInt(remainingCardCount);
 
-        Card card = this.cards.get(index);
+            card = this.cards.get(index);
+        }
         return card;
+    }
+
+    public int getTotalDeckValue() {
+        int total = 0;
+        for(Card card : cards) {
+            total += card.getValueFromEnum();
+        }
+        return total;
     }
 }

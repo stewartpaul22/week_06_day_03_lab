@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Hand {
 
     private ArrayList<Card> cards;
+    private Card card;
 
     public Hand() {
         this.cards =  new ArrayList<>();
@@ -10,5 +11,23 @@ public class Hand {
 
     public int getCardCount() {
         return this.cards.size();
+    }
+
+    public Card addCard(Deck deck) {
+        Card card = deck.dealCard();
+        this.cards.add(card);
+        return card;
+    }
+
+    public ArrayList<Card> getAllCards() {
+        return this.cards;
+    }
+
+    public int getTotalHandValue() {
+        int total = 0;
+        for(Card card : this.cards) {
+            total += card.getValueFromEnum();
+        }
+        return total;
     }
 }
